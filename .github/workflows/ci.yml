@@ -9,6 +9,7 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - run: python build.py
+    - run: curl -fsS https://dotenvx.sh/ | sh
+    - run: dotenvx run -- python build.py
       env:
         DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
